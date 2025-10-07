@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Proyecto2</string>
+    <string name="post"> Post</string>
+    <string name="followers"> Followers</string>
+    <string name="following"> Following</string>
+    <string name="num1"> 70</string>
+    <string name="num2"> 2000</string>
+    <string name="num3"> 1800</string>
+    <string name="sub">Subnombre</string>
+    <string name="des">Descripción</string>
+</resources>
