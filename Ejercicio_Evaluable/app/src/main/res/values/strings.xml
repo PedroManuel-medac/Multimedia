@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejercicio_Evaluable</string>
+    <string name="texto1"> Millones de canciones.</string>
+    <string name="texto2"> Gratis en Spotify.</string>
+    <string name="iniciarsesion"> Iniciar sesión</string>
+    <string name="email">Correo electrónico</string>
+    <string name="contraseña"> Contraseña</string>
+</resources>
