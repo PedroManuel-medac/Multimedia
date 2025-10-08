@@ -5,4 +5,6 @@
     <string name="iniciarsesion"> Iniciar sesión</string>
     <string name="email">Correo electrónico</string>
     <string name="contraseña"> Contraseña</string>
+    <string name="albumes1"> Álbumes y sencillos populares</string>
+    <string name="emisoras"> Emisoras populares</string>
 </resources>
