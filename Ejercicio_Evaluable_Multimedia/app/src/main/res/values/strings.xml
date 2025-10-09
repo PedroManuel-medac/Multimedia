@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Ejercicio_Evaluable_Multimedia</string>
+    <string name="portada1">Me mareo</string>
+    <string name="portada1descrip">Kidd Voodoo, JC Reyes</string>
+    <string name="portada2">EoO</string>
+    <string name="portada2descrip">Bad Bunny</string>
+    <string name="portada3">No Tiene Sentido</string>
+    <string name="portada3descrip">Béele</string>
+    <string name="portada4">Revolú</string>
+    <string name="portada4descrip">RVFV</string>
+    <string name="portada5">Yandel 150</string>
+    <string name="portada5descrip">Yandel, Feid</string>
+    <string name="portada6">Moscow Mule</string>
+    <string name="portada6descrip">Bad Bunny</string>
+    <string name="playlist">My Playlist #1</string>
+    <string name="nombre"> Pedro Manuel</string>
+    <string name="boton1">Inicio</string>
+    <string name="boton2">Buscar</string>
+    <string name="boton3">Biblioteca</string>
+    <string name="horas"> 3h 24 min</string>
+</resources>
