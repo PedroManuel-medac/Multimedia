@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name"> New Project</string>
+    <string name="recent"> Últimos movimientos</string>
+    <style name="Base.Theme.NewProject" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.NewProject" parent="Base.Theme.NewProject"/>
+</resources>
