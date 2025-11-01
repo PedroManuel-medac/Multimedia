@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pasapalabra</string>
+    <string name="botonJugar"> Jugar</string>
+    <string name="rosco"> Rosco diario</string>
+    <string name="unadecuatro"> Una de cuatro</string>
+    <string name="sopadeletras"> Sopa de letras</string>
+</resources>
