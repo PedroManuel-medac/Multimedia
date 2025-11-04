@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Preguntados</string>
+    <string name="hintNombre">Nombre de usuario</string>
+    <string name="botonComenzar">Comenzar</string>
+    <string name="eleccion">¿A qué quieres jugar?</string>
+    <string name="geografia">Geografía</string>
+    <string name="entretenimiento">Entretenimiento</string>
+    <string name="historia">Historia</string>
+
+    <!-- PROGRESO-->
+    <string name="progreso1">1/5</string>
+    <string name="progreso2">2/5</string>
+    <string name="progreso3">3/5</string>
+    <string name="progreso4">4/5</string>
+    <string name="progreso5">5/5</string>
+
+    <!-- PREGUNTAS HISTORIA-->
+    <string name="pregunta1">¿En qué año ocurrió el descubrimiento de América por Cristóbal Colón?</string>
+    <string name="respuesta1">1453</string>
+    <string name="respuesta2">1492</string>
+    <string name="respuesta3">1473</string>
+
+    <string name="pregunta2">¿Qué civilización construyó las pirámides de Egipto?</string>
+    <string name="respuesta4">Romanos</string>
+    <string name="respuesta5">Griegos</string>
+    <string name="respuesta6">Egipcios</string>
+
+    <string name="pregunta3">¿Quién fue el primer emperador del Imperio Romano?</string>
+    <string name="respuesta7">Julio Cesar</string>
+    <string name="respuesta8">Augusto</string>
+    <string name="respuesta9">Nerón</string>
+
+    <string name="pregunta4">¿Qué documento firmado en 1215 limitó el poder del rey en Inglaterra?</string>
+    <string name="respuesta10">La Constitución Inglesa</string>
+    <string name="respuesta11">El Tratado de Versalles</string>
+    <string name="respuesta12">La Carta Magna</string>
+
+    <string name="pregunta5">¿Cuál fue la principal causa del inicio de la Primera Guerra Mundial?</string>
+    <string name="respuesta13">El asesinato del archiduque Francisco Fernando</string>
+    <string name="respuesta14">La caída del Imperio Romano</string>
+    <string name="respuesta15">La revolución rusa</string>
+
+</resources>
