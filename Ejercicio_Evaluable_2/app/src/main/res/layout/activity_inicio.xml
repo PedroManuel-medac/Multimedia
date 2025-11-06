@@ -27,23 +27,6 @@
             android:contentDescription="@string/geografia"
             app:srcCompat="@drawable/geografia" />
 
-        <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/transparent"
-            android:contentDescription="@string/entretenimiento"
-            app:srcCompat="@drawable/cultura" />
-
-        <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/transparent"
-            android:contentDescription="@string/historia"
-            app:srcCompat="@drawable/historia" />
     </LinearLayout>
 
     <TextView
@@ -89,6 +72,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006"
-        app:srcCompat="@drawable/trofeo" />
+        app:layout_constraintVertical_bias="0.006" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

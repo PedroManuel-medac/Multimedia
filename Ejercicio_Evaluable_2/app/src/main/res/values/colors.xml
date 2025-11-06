@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azul">#00D4FF</color>
     <color name="azuloscuro">#0059FF</color>
+    <color name="rojo">#FF0000</color>
+    <color name="verde">#09FF00</color>
 </resources>

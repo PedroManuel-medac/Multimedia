@@ -65,7 +65,7 @@
             android:layout_height="200dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
-            app:srcCompat="@drawable/imperioromano" />
+            app:srcCompat="@drawable/guerramundial" />
 
         <TextView
             android:id="@+id/textView4"

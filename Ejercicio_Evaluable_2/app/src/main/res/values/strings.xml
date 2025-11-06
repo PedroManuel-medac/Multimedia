@@ -6,6 +6,11 @@
     <string name="geografia">Geografía</string>
     <string name="entretenimiento">Entretenimiento</string>
     <string name="historia">Historia</string>
+    <string name="ganador"> ¡Enhorabuena!</string>
+    <string name="correctas"> Respuestas correctas:</string>
+    <string name="volver">Volver al inicio</string>
+    <string name="perder">No has superado la prueba</string>
+    <string name="perder2">Tu puntuación es:</string>
 
     <!-- PROGRESO-->
     <string name="progreso1">1/5</string>
@@ -39,5 +44,6 @@
     <string name="respuesta13">El asesinato del archiduque Francisco Fernando</string>
     <string name="respuesta14">La caída del Imperio Romano</string>
     <string name="respuesta15">La revolución rusa</string>
+
 
 </resources>
