@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -22,6 +23,10 @@ public class Geografia extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geografia);
 
+        Intent intentRecibido = getIntent();
+        String nombreJugador = intentRecibido.getStringExtra("nombreJugador");
+        int puntosJugador = intentRecibido.getIntExtra("puntosJugador", 0);
+
         b2 = findViewById(R.id.button2);
         b3 = findViewById(R.id.button3);
         b4 = findViewById(R.id.button4);
@@ -36,7 +41,11 @@ public class Geografia extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        //Mostrar popup después de 2 segundos
+
+                        MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia.this, R.raw.incorrecto);
+                        sonidoIncorrecto.start();
+
+                        // Mostrar popup
                         AlertDialog.Builder builder = new AlertDialog.Builder(Geografia.this);
                         builder.setTitle("¡Respuesta incorrecta!");
                         builder.setMessage("La respuesta correcta es --> 1492");
@@ -44,7 +53,10 @@ public class Geografia extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
+
                                 Intent intent = new Intent(Geografia.this, Geografia_2.class);
+                                intent.putExtra("nombreJugador", nombreJugador);
+                                intent.putExtra("puntosJugador", puntosJugador);
                                 startActivity(intent);
                             }
                         });
@@ -60,18 +72,25 @@ public class Geografia extends AppCompatActivity {
                 b3.setBackgroundTintList(ColorStateList.valueOf(
                         ContextCompat.getColor(Geografia.this, R.color.verde)
                 ));
+
+                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia.this, R.raw.correcto);
+                sonidoIncorrecto.start();
+
+
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
+                        int nuevosPuntos = puntosJugador + 1;
+
                         Intent intent = new Intent(Geografia.this, Geografia_2.class);
+                        intent.putExtra("nombreJugador", nombreJugador);
+                        intent.putExtra("puntosJugador", nuevosPuntos);
                         startActivity(intent);
                     }
                 }, 1000);
-                Almacen.contador++;
             }
-
         });
-
 
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +102,10 @@ public class Geografia extends AppCompatActivity {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        //Mostrar popup después de 2 segundos
+
+                        MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia.this, R.raw.incorrecto);
+                        sonidoIncorrecto.start();
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(Geografia.this);
                         builder.setTitle("¡Respuesta incorrecta!");
                         builder.setMessage("La respuesta correcta es --> 1492");
@@ -91,9 +113,11 @@ public class Geografia extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-                                Intent intent = new Intent(Geografia.this, Geografia_2.class);
-                                startActivity(intent);
 
+                                Intent intent = new Intent(Geografia.this, Geografia_2.class);
+                                intent.putExtra("nombreJugador", nombreJugador);
+                                intent.putExtra("puntosJugador", puntosJugador);
+                                startActivity(intent);
                             }
                         });
                         builder.show();
@@ -101,14 +125,5 @@ public class Geografia extends AppCompatActivity {
                 }, 1000);
             }
         });
-
-
-
-
-
     }
-    }
-
-
-
-
+}

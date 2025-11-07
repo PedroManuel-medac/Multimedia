@@ -12,10 +12,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button b1;
+    EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         b1 = findViewById(R.id.button);
+        et = findViewById(R.id.editTextText);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String nombre = et.getText().toString();
+                int puntos = 0;
+
                 Intent abrirPantalla = new Intent(MainActivity.this, Geografia.class);
+
+                abrirPantalla.putExtra("nombreJugador", nombre);
+                abrirPantalla.putExtra("puntosJugador", puntos);
+
                 startActivity(abrirPantalla);
             }
         });
