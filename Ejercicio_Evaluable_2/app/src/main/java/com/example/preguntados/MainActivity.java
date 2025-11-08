@@ -13,11 +13,15 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button b1;
     EditText et;
+
+    ImageButton iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         b1 = findViewById(R.id.button);
         et = findViewById(R.id.editTextText);
+        iv = findViewById(R.id.imageButton);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String nombre = et.getText().toString();
                 int puntos = 0;
 
-                Intent abrirPantalla = new Intent(MainActivity.this, Geografia.class);
+                Intent abrirPantalla = new Intent(MainActivity.this, PantallaPrincipal.class);
 
                 abrirPantalla.putExtra("nombreJugador", nombre);
                 abrirPantalla.putExtra("puntosJugador", puntos);
@@ -42,5 +47,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(abrirPantalla);
             }
         });
+
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper db = new DatabaseHelper(MainActivity.this);
+                db.borrarTodo();
+                Toast.makeText(MainActivity.this, "Ranking borrado correctamente", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 }

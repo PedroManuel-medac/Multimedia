@@ -27,6 +27,12 @@ public class PantallaGanadora extends AppCompatActivity {
         b = findViewById(R.id.button5);
         gifImageView = findViewById(R.id.imageView3);
 
+        //Para el gif de la copa
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.copa)
+                .into(gifImageView);
+
         // Reproducir sonido ganador
         MediaPlayer sonidoGanador = MediaPlayer.create(PantallaGanadora.this, R.raw.ganadorfinal);
         sonidoGanador.start();
@@ -46,17 +52,12 @@ public class PantallaGanadora extends AppCompatActivity {
         // Mostrar el ranking completo
         mostrarRanking(dbHelper);
 
-        // Mostrar GIF de confeti
-        Glide.with(this)
-                .asGif()
-                .load(R.drawable.confetis)
-                .into(gifImageView);
 
         // Botón para volver al inicio
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pantallaPrincipal = new Intent(PantallaGanadora.this, MainActivity.class);
+                Intent pantallaPrincipal = new Intent(PantallaGanadora.this, PantallaPrincipal.class);
                 startActivity(pantallaPrincipal);
                 finish();
             }

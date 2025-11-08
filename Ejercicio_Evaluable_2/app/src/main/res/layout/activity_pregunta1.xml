@@ -4,10 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azuloscuro"
+    android:background="@drawable/pregunta1"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context=".Geografia_2">
+    tools:context=".Pregunta1">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/semiblanco"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            app:srcCompat="@drawable/gif1" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/pregunta1"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -25,7 +55,7 @@
             android:backgroundTint="@color/white"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="@string/respuesta4"
+            android:text="@string/respuesta1"
             android:textColor="@color/black"
             app:cornerRadius="10dp" />
 
@@ -34,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:text="@string/respuesta5"
+            android:text="@string/respuesta2"
             android:textColor="@color/black"
             app:cornerRadius="10dp" />
 
@@ -43,15 +73,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:text="@string/respuesta6"
+            android:text="@string/respuesta3"
             android:textColor="@color/black"
             app:cornerRadius="10dp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@android:color/transparent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
-            android:text="@string/progreso2"
+            android:text="@string/progreso1"
             android:textAlignment="center"
             android:textColor="@color/white" />
 
@@ -73,37 +104,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="5"
-            android:progress="2"
+            android:progress="1"
             android:progressTint="@color/white" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:background="@color/white"
-        android:orientation="vertical"
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="121dp">
+        app:srcCompat="@drawable/libro" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            app:srcCompat="@drawable/piramides" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/pregunta2"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

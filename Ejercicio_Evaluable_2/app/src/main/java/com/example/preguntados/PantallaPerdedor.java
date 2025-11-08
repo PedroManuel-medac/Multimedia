@@ -41,15 +41,10 @@ public class PantallaPerdedor extends AppCompatActivity {
 
         mostrarRanking(dbHelper);
 
-        Glide.with(this)
-                .asGif()
-                .load(R.drawable.loser)
-                .into(gifImageView);
-
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pantallaPrincipal = new Intent(PantallaPerdedor.this, MainActivity.class);
+                Intent pantallaPrincipal = new Intent(PantallaPerdedor.this, PantallaPrincipal.class);
                 startActivity(pantallaPrincipal);
                 finish();
             }

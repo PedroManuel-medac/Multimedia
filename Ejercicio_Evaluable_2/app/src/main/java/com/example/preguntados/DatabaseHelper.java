@@ -40,31 +40,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void insertarJugador(String nombre, int puntos) {
         SQLiteDatabase db = getWritableDatabase();
 
-        // Comprobamos si ya existe ese nombre
         String where = COL_NOMBRE + " = '" + nombre + "'";
+        Cursor c = db.query(TBL_RANKING, new String[]{COL_PUNTOS}, where, null, null, null, null);
 
-        try (Cursor c = db.query(
-                TBL_RANKING,
-                new String[]{COL_PUNTOS},
-                where,
-                null, null, null, null)) {
+        if (c.moveToFirst()) {
+            int puntosActuales = c.getInt(0);
+            int nuevosPuntos = puntosActuales + puntos;
 
-            if (c.moveToFirst()) {
-                int puntosActuales = c.getInt(0);
-                int nuevosPuntos = puntosActuales + puntos;
+            ContentValues valores = new ContentValues();
+            valores.put(COL_PUNTOS, nuevosPuntos);
 
-                ContentValues valores = new ContentValues();
-                valores.put(COL_PUNTOS, nuevosPuntos);
-
-                db.update(TBL_RANKING, valores, where, null);
-            } else {
-                ContentValues valores = new ContentValues();
-                valores.put(COL_NOMBRE, nombre);
-                valores.put(COL_PUNTOS, puntos);
-                db.insert(TBL_RANKING, null, valores);
-            }
+            db.update(TBL_RANKING, valores, where, null);
+        } else {
+            ContentValues valores = new ContentValues();
+            valores.put(COL_NOMBRE, nombre);
+            valores.put(COL_PUNTOS, puntos);
+            db.insert(TBL_RANKING, null, valores);
         }
 
+        c.close();
         db.close();
     }
 
@@ -72,5 +66,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor obtenerRanking() {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TBL_RANKING + " ORDER BY " + COL_PUNTOS + " DESC", null);
+    }
+
+    // Borrar todos los datos de la tabla
+    public void borrarTodo() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TBL_RANKING, null, null);
+        db.close();
     }
 }

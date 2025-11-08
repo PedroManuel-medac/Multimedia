@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/componente"
+    android:background="@drawable/fondoganador"
+    android:textAlignment="center"
     tools:context=".PantallaGanadora">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="409dp"
-        android:layout_height="100dp"
+        android:layout_height="65dp"
+        android:background="@color/semiblanco"
         android:orientation="vertical"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,15 +25,19 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/semiblanco"
             android:text="@string/ganador"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="34sp" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/semiblanco"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="14sp" />
 
     </LinearLayout>
@@ -41,7 +47,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
+        android:backgroundTint="@color/verdeclaro"
         android:text="@string/volver"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -56,16 +64,20 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/confetis" />
+        app:layout_constraintVertical_bias="0.977"
+        app:srcCompat="@drawable/copa" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="TextView"
+        android:layout_marginTop="104dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 

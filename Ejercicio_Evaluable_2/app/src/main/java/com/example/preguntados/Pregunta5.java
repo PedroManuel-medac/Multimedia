@@ -12,19 +12,41 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class Geografia_5 extends AppCompatActivity {
+import com.bumptech.glide.Glide;
+
+public class Pregunta5 extends AppCompatActivity {
 
     private Button b2, b3, b4;
-
+    private ImageView gifImageView;
+    private ImageButton ib;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_geografia5);
+        setContentView(R.layout.activity_pregunta5);
 
+        ib = findViewById(R.id.imageButton7);
+        tv = findViewById(R.id.textView13);
         b2 = findViewById(R.id.button2);
         b3 = findViewById(R.id.button3);
         b4 = findViewById(R.id.button4);
+        gifImageView = findViewById(R.id.imageView);
+
+        //Para el gif de las preguntas
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.gif5)
+                .into(gifImageView);
+
+        //Para el gif del mago pistas
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.libro)
+                .into(ib);
 
         Intent intentRecibido = getIntent();
         String nombreJugador = intentRecibido.getStringExtra("nombreJugador");
@@ -34,25 +56,25 @@ public class Geografia_5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia_5.this, R.raw.incorrecto);
+                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Pregunta5.this, R.raw.incorrecto);
                 sonidoIncorrecto.start();
 
                 b3.setBackgroundTintList(ColorStateList.valueOf(
-                        ContextCompat.getColor(Geografia_5.this, R.color.rojo)
+                        ContextCompat.getColor(Pregunta5.this, R.color.rojo)
                 ));
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Geografia_5.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Pregunta5.this);
                     builder.setTitle("¡Respuesta incorrecta!");
-                    builder.setMessage("La respuesta correcta es --> El asesinato del archiduque Francisco Fernando");
+                    builder.setMessage("La respuesta correcta es --> Silencio");
                     builder.setPositiveButton("Aceptar", (dialog, which) -> {
                         dialog.dismiss();
                         if (puntosJugador > 2) {
-                            Intent intent = new Intent(Geografia_5.this, PantallaGanadora.class);
+                            Intent intent = new Intent(Pregunta5.this, PantallaGanadora.class);
                             intent.putExtra("nombreJugador", nombreJugador);
                             intent.putExtra("puntosJugador", puntosJugador);
                             startActivity(intent);
                         } else {
-                            Intent intent = new Intent(Geografia_5.this, PantallaPerdedor.class);
+                            Intent intent = new Intent(Pregunta5.this, PantallaPerdedor.class);
                             intent.putExtra("nombreJugador", nombreJugador);
                             intent.putExtra("puntosJugador", puntosJugador);
                             startActivity(intent);
@@ -67,21 +89,21 @@ public class Geografia_5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 b2.setBackgroundTintList(ColorStateList.valueOf(
-                        ContextCompat.getColor(Geografia_5.this, R.color.verde)
+                        ContextCompat.getColor(Pregunta5.this, R.color.verde)
                 ));
 
-                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia_5.this, R.raw.correcto);
+                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Pregunta5.this, R.raw.correcto);
                 sonidoIncorrecto.start();
 
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     int nuevosPuntos = puntosJugador + 1;
                     if (nuevosPuntos > 2) {
-                        Intent intent = new Intent(Geografia_5.this, PantallaGanadora.class);
+                        Intent intent = new Intent(Pregunta5.this, PantallaGanadora.class);
                         intent.putExtra("nombreJugador", nombreJugador);
                         intent.putExtra("puntosJugador", nuevosPuntos);
                         startActivity(intent);
                     } else {
-                        Intent intent = new Intent(Geografia_5.this, PantallaPerdedor.class);
+                        Intent intent = new Intent(Pregunta5.this, PantallaPerdedor.class);
                         intent.putExtra("nombreJugador", nombreJugador);
                         intent.putExtra("puntosJugador", nuevosPuntos);
                         startActivity(intent);
@@ -94,25 +116,25 @@ public class Geografia_5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Geografia_5.this, R.raw.incorrecto);
+                MediaPlayer sonidoIncorrecto = MediaPlayer.create(Pregunta5.this, R.raw.incorrecto);
                 sonidoIncorrecto.start();
 
                 b4.setBackgroundTintList(ColorStateList.valueOf(
-                        ContextCompat.getColor(Geografia_5.this, R.color.rojo)
+                        ContextCompat.getColor(Pregunta5.this, R.color.rojo)
                 ));
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Geografia_5.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Pregunta5.this);
                     builder.setTitle("¡Respuesta incorrecta!");
-                    builder.setMessage("La respuesta correcta es --> El asesinato del archiduque Francisco Fernando");
+                    builder.setMessage("La respuesta correcta es --> Silencio");
                     builder.setPositiveButton("Aceptar", (dialog, which) -> {
                         dialog.dismiss();
                         if (puntosJugador > 2) {
-                            Intent intent = new Intent(Geografia_5.this, PantallaGanadora.class);
+                            Intent intent = new Intent(Pregunta5.this, PantallaGanadora.class);
                             intent.putExtra("nombreJugador", nombreJugador);
                             intent.putExtra("puntosJugador", puntosJugador);
                             startActivity(intent);
                         } else {
-                            Intent intent = new Intent(Geografia_5.this, PantallaPerdedor.class);
+                            Intent intent = new Intent(Pregunta5.this, PantallaPerdedor.class);
                             intent.putExtra("nombreJugador", nombreJugador);
                             intent.putExtra("puntosJugador", puntosJugador);
                             startActivity(intent);
@@ -120,6 +142,14 @@ public class Geografia_5 extends AppCompatActivity {
                     });
                     builder.show();
                 }, 1000);
+            }
+        });
+
+        String pista5 = "En su reino, hasta las palabras duermen.";
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv.setText(pista5);
             }
         });
     }
